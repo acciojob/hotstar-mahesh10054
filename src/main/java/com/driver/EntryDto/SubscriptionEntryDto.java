@@ -1,11 +1,16 @@
 package com.driver.EntryDto;
 
 import com.driver.model.SubscriptionType;
+import com.fasterxml.jackson.databind.util.EnumValues;
+
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 
 public class SubscriptionEntryDto {
 
     private int userId;
+    @Enumerated(value = EnumType.STRING)
     private SubscriptionType subscriptionType;
     private int noOfScreensRequired;
 
