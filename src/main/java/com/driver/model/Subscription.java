@@ -1,13 +1,7 @@
 package com.driver.model;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -18,6 +12,7 @@ public class Subscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Enumerated(value = EnumType.STRING)
     private SubscriptionType subscriptionType;
 
     private int noOfScreensSubscribed;
