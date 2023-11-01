@@ -26,7 +26,6 @@ public class SubscriptionController {
         return subscriptionService.buySubscription(subscriptionEntryDto);
     }
 
-
     @PutMapping("/upgradeSubscription/{userId}")
     public Integer upgradeSubscription(@PathVariable("userId")Integer userId){
 
