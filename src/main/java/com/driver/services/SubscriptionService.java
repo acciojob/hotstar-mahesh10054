@@ -39,7 +39,7 @@ public class SubscriptionService {
         else if(subscriptionType.equals("PRO")) {
             total = 800 + 250*noOfScreensSubscribed;
         }
-        else {
+        else if(subscriptionType.equals("ELITE")) {
             total = 1000 + 350*noOfScreensSubscribed;
         }
         subscription.setTotalAmountPaid(total);
@@ -74,7 +74,7 @@ public class SubscriptionService {
             subscription.setSubscriptionType(SubscriptionType.PRO);
             total = (800 + 250*noOfScreensSubscribed) - totalAmountPaid;
         }
-        else {
+        else if((subscriptionType.equals("PRO"))) {
             subscription.setSubscriptionType(SubscriptionType.ELITE);
             total = (1000 + 350*noOfScreensSubscribed) - totalAmountPaid;
         }

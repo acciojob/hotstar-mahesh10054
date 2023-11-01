@@ -55,14 +55,14 @@ public class UserService {
     }
     public boolean checkSubscription(String subscriptionRequired,String subscriptionType)
     {
-        int s;
-        int n;
+        int s = 0;
+        int n = 0;
         if(subscriptionRequired.equals("BASIC"))
         {
             s = 1;
         } else if (subscriptionRequired.equals("PRO")) {
             s = 2;
-        } else {
+        } else if (subscriptionRequired.equals("ELITE")){
             s = 3;
         }
 
@@ -71,10 +71,11 @@ public class UserService {
             n = 1;
         } else if (subscriptionType.equals("PRO")) {
             n = 2;
-        } else {
+        } else if (subscriptionType.equals("ELITE")) {
             n = 3;
         }
-        if(n >= s)
+
+        if(n != 0 && s != 0 && n >= s)
         {
             return true;
         }
